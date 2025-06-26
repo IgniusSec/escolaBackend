@@ -11,7 +11,7 @@ import java.util.List;
 @NoArgsConstructor
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Entity
-@Table(name = "course")
+@Table(name = "tb_course")
 public class Course {
     @EqualsAndHashCode.Include
     @Id

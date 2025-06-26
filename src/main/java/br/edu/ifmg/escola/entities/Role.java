@@ -8,7 +8,7 @@ import lombok.*;
 @NoArgsConstructor
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Entity
-@Table(name = "role")
+@Table(name = "tb_role")
 public class Role{
     @EqualsAndHashCode.Include
     @Id

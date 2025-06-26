@@ -12,7 +12,7 @@ import java.util.List;
 @NoArgsConstructor
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Entity
-@Table(name = "resource")
+@Table(name = "tb_resource")
 public class Resource {
     @EqualsAndHashCode.Include
     @Id
@@ -29,4 +29,7 @@ public class Resource {
     @ManyToOne
     @JoinColumn(name = "offer_id")
     private Offer offer;
+
+    @OneToMany(mappedBy = "resource")
+    private List<Section> sections = new ArrayList<>();
 }

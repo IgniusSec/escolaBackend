@@ -15,7 +15,7 @@ import java.util.List;
 @NoArgsConstructor
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Entity
-@Table(name = "offer")
+@Table(name = "tb_offer")
 public class Offer {
     @EqualsAndHashCode.Include
     @Id
@@ -32,5 +32,5 @@ public class Offer {
     private Course course;
 
     @OneToMany(mappedBy = "offer")
-    private List<Resource> offers = new ArrayList<>();
+    private List<Resource> offers = new ArrayList<Resource>();
 }
