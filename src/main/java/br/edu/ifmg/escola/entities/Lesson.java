@@ -3,7 +3,9 @@ package br.edu.ifmg.escola.entities;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Data
@@ -17,6 +19,7 @@ import java.util.Set;
 @Table(name = "tb_lesson")
 public class Lesson {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Include
     private long id;
     private String title;
@@ -35,4 +38,7 @@ public class Lesson {
             }
     )
     private Set<Enrollment> enrollmentsDone = new HashSet<Enrollment>();
+
+    @OneToMany(mappedBy = "lesson")
+    private List<Deliver> deliveries = new ArrayList<Deliver>();
 }
